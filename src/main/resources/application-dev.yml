@@ -1,0 +1,37 @@
+#开发环境
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name:  com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 111111
+  jpa:
+    hibernate:
+      ddl-auto: update # 第一次建表create  后面用update
+    show-sql: true
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/springboot-db
+  redis:
+    host: 192.168.19.22 #39.106.13.187
+    port: 6379
+  #  password: bobywxd21
+    database: 0
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500
+        min-idle: 0
+    timeout: 5000
+  http:
+    multipart:
+      max-file-size: 128kb
+      max-request-size: 128kb
+  webservices:
+    path: /
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: org.lbl.springboot.demo.t7
